@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: darkblue;
+    padding: 5px;
+    background-color: darkcyan;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Dikeyde ortalama */
+    
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; /* Logodan başlığa boşluk */
+}
+
+h1 {
+    margin: 0;
+    font-size: 20px;
+    
+}
+
+.llogo {
+    width: 20px;
+    height: auto;
+} 
+
+.language-icon{
+    width: 10px;
+    height: 10px;
+}
+
+.container {
+    display: flex;          /* Flexbox düzeni */
+    justify-content: space-between; /* İçeriği sola ve sağa dağıtır */
+}
+
+.menu {
+    display: flex;          /* Flexbox düzeni */
+    width: 100%;            /* Menü konteynerinin genişliği */
+}
+
+.menu a {
+    padding: 5px 5px;
+    text-decoration: none;
+    color: darkblue;
+}
+
+/* Home için özel düzen */
+.menu a:last-child {
+    margin-left: auto; /* Home öğesini sola dayar */
+}
+
+
+
+
+
+
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;        /* Resimlerin genişliğinin ekran boyutuna uymasını sağlar */
+    height: 500px;          /* Yüksekliği istediğiniz gibi ayarlayın */
+    overflow: hidden;       /* Görüntülenmeyen kısmı gizler */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;            /* Yüksekliği %100 yaparak tam ekranı doldurur */
+    transition: opacity 0.5s ease;
+}
+
+.slide img {
+    width: 100%;            /* Resimlerin genişliğini %100 yaparak konteynere uyar */
+    height: auto;           /* Yüksekliği otomatik ayarlar */
+    object-fit: cover;      /* Resmin alanı doldurmasını sağlar */
+}
+
+.controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.controls label {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#slide1:checked ~ .carousel .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .carousel .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .carousel .slides {
+    transform: translateX(-200%);
+}
+
+
+.horizontal-gallery {
+    display: flex;              /* Resimleri yatayda hizalamak için flexbox kullanılır */
+    overflow-x: scroll;         /* Yalnızca yatay kaydırmayı aktif hale getirir */
+    gap: 10px;                  /* Resimler arasındaki boşluk */
+    padding-bottom: 10px;       /* Alt kısıma biraz boşluk ekler */
+    scroll-snap-type: x mandatory;  /* Kaydırma sırasında hizalama yapılır */
+    width: 100%;                /* Galerinin genişliğini tam ekran yapar */
+    height: 300px;              /* Galeri yüksekliği */
+}
+
+.horizontal-gallery img {
+    height: 100%;               /* Resimlerin boyutlarını galeriye göre ayarlar */
+    flex-shrink: 0;             /* Resimlerin boyutlarının küçülmesini engeller */
+    scroll-snap-align: start;   /* Resimlerin hizalanmasını sağlar */
+    object-fit: cover;          /* Resmin boyutunun galeriyi doldurmasını sağlar */
+}
+
+.rooms{
+    margin-bottom: 5px;
+}
+
